@@ -225,7 +225,7 @@ def main():
     st.markdown("---")
     st.markdown(
         "<p style='text-align:center; color:#666; font-size:0.85rem;'>"
-        "Powered by Hybrid Deep Learning (MobileNetV3 + BiLSTM + FFT) • ONNX Runtime"
+        "Powered by Hybrid Deep Learning and ONNX Runtime"
         "</p>",
         unsafe_allow_html=True,
     )
