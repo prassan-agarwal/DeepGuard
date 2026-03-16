@@ -158,7 +158,7 @@ def main():
     """, unsafe_allow_html=True)
 
     st.markdown('<h1 class="main-title">🕵️ Deepfake Video Detector</h1>', unsafe_allow_html=True)
-    st.markdown('<p class="subtitle">Upload a video to analyze if it\'s real or AI-generated</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subtitle">Upload a video to analyze if it\'s real or a Deepfake.</p>', unsafe_allow_html=True)
 
     # Load model
     session, detector = load_model()
