@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 4%;
+    --foreground: 210 40% 98%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 47% 11%;
+    --card: 240 10% 8%;
+    --card-foreground: 210 40% 98%;
+    --border: 240 14% 15%;
+    --ring: 224 71% 45%;
+  }
+
+  * {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans antialiased selection:bg-primary/30;
+    /* Soft cosmic dark mode background gradient */
+    background-image: 
+      radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 25%),
+      radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.08) 0%, transparent 25%);
+    background-attachment: fixed;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-card/60 backdrop-blur-md border border-white/10 shadow-xl;
+  }
+  .glass-hover {
+    @apply hover:bg-card/80 transition-colors duration-300;
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-violet-500;
+  }
+}
+
+/* Custom animated background elements */
+.blob {
+  position: absolute;
+  filter: blur(80px);
+  z-index: -1;
+  opacity: 0.5;
+  border-radius: 50%;
+  animation: float 20s ease-in-out infinite;
+}
+
+.blob-1 { top: -10%; left: -10%; width: 500px; height: 500px; background: rgba(59, 130, 246, 0.15); animation-delay: 0s; }
+.blob-2 { bottom: -20%; right: -10%; width: 600px; height: 600px; background: rgba(139, 92, 246, 0.15); animation-delay: -5s; }
+.blob-3 { top: 40%; left: 50%; width: 400px; height: 400px; background: rgba(236, 72, 153, 0.1); animation-delay: -10s; transform: translate(-50%, -50%); }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  33% { transform: translateY(-30px) scale(1.1); }
+  66% { transform: translateY(20px) scale(0.9); }
+}
